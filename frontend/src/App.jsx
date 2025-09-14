@@ -8,6 +8,10 @@ function App() {
       const response = await fetch("http://localhost:8080/");
       const text = await response.text();
       setMessage(text);
+
+      setTimeout(() => {
+        setMessage("");
+      }, 5000); // Clear message after 5 seconds
     } catch (err) {
       setMessage("Error fetching API");
       console.error(err);
